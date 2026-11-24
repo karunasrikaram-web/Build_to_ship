@@ -1,0 +1,150 @@
+:root {
+  --primary: #1e40af;       /* Deep College Blue */
+  --primary-hover: #1d4ed8; /* Blue Hover */
+  --primary-light: #eff6ff; /* Very light blue background */
+  --secondary: #3b82f6;     /* Vibrant Blue */
+  --accent: #0284c7;        /* Sky Blue */
+  
+  --bg-main: #f8fafc;       /* Clean cool white background */
+  --bg-card: #ffffff;       /* Pure white card surface */
+  --bg-sidebar: #0f172a;    /* Deep navy sidebar */
+  --bg-sidebar-hover: #1e293b;
+  
+  --text-main: #0f172a;     /* Dark slate */
+  --text-muted: #64748b;    /* Muted gray */
+  --text-light: #94a3b8;    /* Light gray */
+  --border-color: #e2e8f0;  /* Subtle border */
+  
+  --status-pending-bg: #fef3c7;
+  --status-pending-text: #92400e;
+  --status-pending-border: #fcd34d;
+
+  --status-progress-bg: #e0f2fe;
+  --status-progress-text: #0369a1;
+  --status-progress-border: #7dd3fc;
+
+  --status-resolved-bg: #dcfce7;
+  --status-resolved-text: #166534;
+  --status-resolved-border: #86efac;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Status Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  text-transform: capitalize;
+  border: 1px solid transparent;
+}
+
+.badge-pending {
+  background-color: var(--status-pending-bg);
+  color: var(--status-pending-text);
+  border-color: var(--status-pending-border);
+}
+
+.badge-in-progress {
+  background-color: var(--status-progress-bg);
+  color: var(--status-progress-text);
+  border-color: var(--status-progress-border);
+}
+
+.badge-resolved {
+  background-color: var(--status-resolved-bg);
+  color: var(--status-resolved-text);
+  border-color: var(--status-resolved-border);
+}
+
+/* Category Tag */
+.category-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 3px 8px;
+  background-color: #f1f5f9;
+  color: #475569;
+  border-radius: var(--radius-sm);
+}
+
+/* Responsive Container */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.content-body {
+  padding: 1.5rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
+  }
+  .content-body {
+    padding: 1rem;
+  }
+}
+
